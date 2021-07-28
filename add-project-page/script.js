@@ -19,7 +19,7 @@ addMemberButton.onclick = function() {
     newFirstName.required = true;
     newLastName.required = true;
     //set unique name and id
-    //newFirstName.name="firstName"+memberCount;
+    newFirstName.name="firstName"+memberCount;
     newLastName.name="lastName"+memberCount;
     newFirstName.id="firstName"+memberCount;
     newLastName.id="lastName"+memberCount;
