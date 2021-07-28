@@ -1,5 +1,5 @@
-#SPE CMS and API (adapted from CMS project brief)
-###Vision
+# SPE CMS and API (adapted from CMS project brief)
+### Vision
 A simple content management system that contains project data such as:
   client name
   client contact
@@ -9,7 +9,7 @@ A simple content management system that contains project data such as:
   and GitHub repository URL
 The CMS will provide an API to other services for reading and writing data.
 
-###Motivation
+### Motivation
 The CMS will be the foundation for new tooling 
 This tooling will ultimately provide up-to-date insight into :
   the progress of the University of Bristol SPE groups
