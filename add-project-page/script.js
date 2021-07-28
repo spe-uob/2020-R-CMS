@@ -19,6 +19,10 @@ addMemberButton.onclick = function() {
     newFirstName.required = true;
     newLastName.required = true;
     //set unique name and id
+    //newFirstName.name="firstName"+memberCount;
+    newLastName.name="lastName"+memberCount;
+    newFirstName.id="firstName"+memberCount;
+    newLastName.id="lastName"+memberCount;
     //add to form
     membersOnPage.appendChild(newFirstName);
     membersOnPage.appendChild(newLastName);
@@ -86,6 +90,40 @@ removeFieldButton.onclick=function(){
 
 //adding a project to a list of JSON project objects to be added to the database
 var newProjects=[];
+
+//get form data, convert to JSON
+const addProject=(ev)=>{
+    ev.preventDefault();
+    //project name, project brief, client name, client email, project members, GitHub URL
+    var newProject = {
+        id: Date.now(),
+        projectName: document.getElementById("projectName").value,
+        projectBrief: document.getElementById("projectBrief").value,
+        projectClientName: document.getElementById("projectClientName").value,
+        projectMembers: [],
+        projectGitHubUrl: document.getElementById("projectGitHubUrl").value     
+    }
+    var membersInSubmissionAsList=membersOnPage.getElementsByTagName("input");
+    for (var index=0; index<membersInSubmissionAsList.length;index++) {
+        //console.log(membersInSubmissionAsList[index].value);
+        if (index % 2 == 0) {
+            var memberFirstName=membersInSubmissionAsList[index].value;        
+        } else {
+            var memberLastName=membersInSubmissionAsList[index].value;
+            newProject.projectMembers.push({
+                firstName: memberFirstName,
+                lastName: memberLastName
+            });
+        }
+        
+    }
+    newProjects.push(newProject);
+    //reset form
+    //document.forms[0].reset();
+
+    //print addition to console
+    console.warn('added ', {newProjects});
+}
 
 
 
