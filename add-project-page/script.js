@@ -103,6 +103,7 @@ const addProject=(ev)=>{
         projectMembers: [],
         projectGitHubUrl: document.getElementById("projectGitHubUrl").value     
     }
+    //add team members
     var membersInSubmissionAsList=membersOnPage.getElementsByTagName("input");
     for (var index=0; index<membersInSubmissionAsList.length;index++) {
         //console.log(membersInSubmissionAsList[index].value);
@@ -115,11 +116,18 @@ const addProject=(ev)=>{
                 lastName: memberLastName
             });
         }
-        
+    }
+    //add additional fields
+    var additionalInputsAsList=additionalFieldsDiv.getElementsByTagName("input");
+    var additionalLabelsAsList=additionalFieldsDiv.getElementsByTagName("label");
+    for (jndex=0;jndex<additionalInputsAsList.length;jndex++){
+        var newKey="project"+additionalLabelsAsList[jndex].innerHTML;
+        var newVal=additionalInputsAsList[jndex].value;
+        newProjects[newKey]=newVal;
     }
     newProjects.push(newProject);
     //reset form
-    //document.forms[0].reset();
+    document.forms[0].reset();
 
     //print addition to console
     console.warn('added ', {newProjects});
