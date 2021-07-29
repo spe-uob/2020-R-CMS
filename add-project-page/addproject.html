@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,64 +9,53 @@
 </head>
 <body>
     <h1>Add Project</h1>
+    <form action="/result" method="GET">
+        <button type="submit">Test</button>
+    </form>
     <!--Form for adding projects-->
     <div id="addProjectFormDiv" class="container">
-    <form id="addProjectForm" action="" method="POST">
-        <!--Project Name-->
+    <form id="addProjectForm" action="" method="POST" th:action="@{/addproject}" th:object="${projectObject}">
         <div>
             <label for="projectName" id="projectNameLabel">Project Name</label>
-            <input type="text" id="projectName" placeholder="Enter project name" required>
+            <input th:field="*{projectName}" type="text" id="projectName" placeholder="Enter project name" required>
         </div>
-        <!--Project Brief-->
         <div>
             <label for="projectBrief" id="projectBriefLabel">Project Brief</label>
-            <textarea id="projectBrief" rows="5" placeholder="Add a brief description"></textarea>
+            <textarea th:field="*{projectBrief}" id="projectBrief" rows="5" placeholder="Add a brief description"></textarea>
         </div>
-        <!--id should be auto generated to be unique-->
-        <!--Client Name-->
         <div>
             <label for="projectClientName" id="projectClientNameLabel">Client Name</label>
-            <input type="text" id="projectClientName" placeholder="Enter Client name" required>
+            <input th:field="*{clientName}" type="text" id="projectClientName" placeholder="Enter Client name" required>
         </div>
-        <!--Client Email-->
         <div>
             <label for="projectClientEmail" id="projectClientEmailLabel">Client Email</label>
-            <input type="email" id="projectClientEmail" placeholder="person@example.com" required>
+            <input th:field="*{clientEmail}" type="email" id="projectClientEmail" placeholder="person@example.com" required>
         </div>
-        <!--List of Project Members-->
         <div id="projectMembers">
             <label for="projectMembers" id="projectMembersLabel">Project Members</label>
             <input type="text" id="firstName1" placeholder="First Name" required>
             <input type="text" id="lastName1" placeholder="Last Name" required>
         </div>
-        <!--Add Member and Remove Member Buttons-->
         <div>
             <span id="add_member"><a href="#">Add Project Member...</a></span>
-            <!--<input type="button" id="add_member" value="Add Project Member" />-->
-            <!--<input type="button" id="remove_member" value="Remove Member" />-->
             <span id="remove_member"><a href="#">Remove Project Member</a></span>
         </div>
-        <!--GitHub URL-->
         <div>
             <label for="projectGitHubUrl" id="projectGitHubUrlLabel">GitHub URL</label>
-            <input type="text" id="projectGitHubUrl" required>
+            <input th:field="*{GitHubUrl}" type="text" id="projectGitHubUrl" required>
         </div>
-        <!--Div for additional fields-->
         <div id="additionalFields">
-
         </div>
-        <!--Add Member and Remove Field Buttons-->
         <div id="changer">
             <span id="add_field"><a href="#">Add New Field</a></span>
-            <!--<input type="button" id="add_field" value="Add New Field" />-->
-            <!--<input type="button" id="remove_field" value="Remove Field" />-->
             <span id="remove_field"><a href="#">Remove Field</a></span>
         </div>
-        <!--Form Submit Button-->
         <div id="submitButton">
             <button type="submit">Submit</button>
         </div>
     </form>
+    </div>
+    <div id="outputDiv">
     </div>
     <script src="script.js"></script>
 </body>
