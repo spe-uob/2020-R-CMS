@@ -1,0 +1,42 @@
+body {
+    font-style : "Arial";
+}
+
+form {
+    display: table;
+    width : 400px;
+    max-width: 400px;
+}
+
+#addProjectForm {
+    align-self: center;
+}
+
+label {
+    display: table-cell;
+}
+
+input {
+    display: table-cell;
+    width: 100%;
+}
+
+#projectBrief {
+    vertical-align: top;
+}
+
+textarea {
+    width: 100%; 
+}
+
+#projectMembersLabel {
+    vertical-align: top;
+}
+
+#emptyCell {
+    width:100%;
+}
+
+.submitButton {
+    float: right;
+}
