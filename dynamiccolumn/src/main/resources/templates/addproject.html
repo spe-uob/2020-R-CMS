@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="formstyle.css">
+    <title>Add project</title>
+</head>
+<body>
+    <h1>Add Project</h1>
+    <!--
+    <form action="/result" method="GET">
+        <button type="submit">Test</button>
+    </form>
+    -->
+    <div>
+        <a href="/index">Back</a>
+    </div>
+    <!--Form for adding projects-->
+    <div id="addProjectFormDiv" class="container">
+    <form id="addProjectForm" action="/addNewProject" method="GET">
+        <div>
+            <label for="projectName" id="projectNameLabel">Project Name</label>
+            <input name="projectname" type="text" id="projectName" placeholder="Enter project name" maxlength="50" required>
+        </div>
+        <div>
+            <label for="projectBrief" id="projectBriefLabel">Project Brief</label>
+            <textarea name="projectbrief" id="projectBrief" rows="5" placeholder="Add a brief description" maxlength="200" required></textarea>
+        </div>
+        <div>
+            <label for="projectClientName" id="projectClientNameLabel">Client Name</label>
+            <input name="clientname" type="text" id="projectClientName" placeholder="Enter Client name" maxlength="50" required>
+        </div>
+        <div>
+            <label for="projectClientEmail" id="projectClientEmailLabel">Client Email</label>
+            <input name="clientemail" type="email" id="projectClientEmail" placeholder="person@example.com" maxlength="50" required>
+        </div>
+        <!--
+        <div id="projectMembers">
+            <label for="projectMembers" id="projectMembersLabel">Project Members</label>
+            <input type="text" id="firstName1" placeholder="First Name" required>
+            <input type="text" id="lastName1" placeholder="Last Name" required>
+        </div>
+        <div>
+            <span id="add_member"><a href="#">Add Project Member...</a></span>
+            <span id="remove_member"><a href="#">Remove Project Member</a></span>
+        </div>
+        -->
+        <div>
+            <label for="projectGitHubUrl" id="projectGitHubUrlLabel">GitHub URL</label>
+            <input name="githuburl" type="text" id="projectGitHubUrl" maxlength="50" required>
+        </div>
+        <!--
+        <div id="additionalFields">
+        </div>
+        <div id="changer">
+            <span id="add_field"><a href="#">Add New Field</a></span>
+            <span id="remove_field"><a href="#">Remove Field</a></span>
+        </div>
+        -->
+        <div id="submitButton">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    </div>
+    <!--
+    <div id="outputDiv">
+    </div>
+    <script src="script.js"></script>
+    -->
+</body>
+</html>
