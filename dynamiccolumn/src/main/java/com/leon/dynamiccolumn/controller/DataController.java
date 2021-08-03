@@ -43,6 +43,7 @@ public class DataController {
      * @param table
      * @return
      */
+
     @ApiOperation(value = "查询表所有数据", notes = "查询表所有数据")
     @ApiImplicitParams({@ApiImplicitParam(name = "table", value = "表名", paramType = "query", required = true)})
     @PostMapping("all")
@@ -56,6 +57,7 @@ public class DataController {
      * @param table
      * @return
      */
+
     @ApiOperation(value = "修改数据", notes = "修改单挑数据")
     @ApiImplicitParams({@ApiImplicitParam(name = "table", value = "表名", paramType = "query", required = true)})
     @PostMapping("modify")
@@ -72,6 +74,7 @@ public class DataController {
      * @param table
      * @return
      */
+
     @ApiOperation(value = "导入数据", notes = "导入excel")
     @ApiImplicitParams({@ApiImplicitParam(name = "table", value = "表名", paramType = "query", required = true)})
     @PostMapping("import")
@@ -91,6 +94,7 @@ public class DataController {
      *
      * @param response
      */
+
     @ApiOperation(value = "导出数据", notes = "导出excel")
     @ApiImplicitParams({@ApiImplicitParam(name = "table", value = "表名", paramType = "query", required = true),
             @ApiImplicitParam(name = "columns", value = "列名(多列以,分割)", paramType = "query", required = true)})

@@ -26,6 +26,7 @@ public class TableController {
      * @param table
      * @return
      */
+
     @ApiOperation(value = "查询列", notes = "查询所有列")
     @ApiImplicitParam(name = "table", value = "表名", paramType = "query", required = true)
     @GetMapping("columns")
@@ -39,6 +40,7 @@ public class TableController {
      *
      * @return
      */
+
     @ApiOperation(value = "查询表", notes = "查询所有表")
     @GetMapping("tables")
     public R getAllTables() {
@@ -54,6 +56,7 @@ public class TableController {
      * @param column
      * @return
      */
+
     @ApiOperation(value = "增加列", notes = "新增一列")
     @ApiImplicitParams({@ApiImplicitParam(name = "table", value = "表名", paramType = "query", required = true),
             @ApiImplicitParam(name = "column", value = "列名", paramType = "query", required = true)})
@@ -63,6 +66,8 @@ public class TableController {
         return this.getAllColumns(table);
     }
 
+
+
     /**
      * 删除列
      *
@@ -70,6 +75,7 @@ public class TableController {
      * @param column
      * @return
      */
+
     @ApiOperation(value = "删除列", notes = "删除一列")
     @ApiImplicitParams({@ApiImplicitParam(name = "table", value = "表名", paramType = "query", required = true),
             @ApiImplicitParam(name = "column", value = "列名", paramType = "query", required = true)})
@@ -87,6 +93,7 @@ public class TableController {
      * @param column2
      * @return
      */
+
     @ApiOperation(value = "修改列", notes = "修改列名")
     @ApiImplicitParams({@ApiImplicitParam(name = "table", value = "表名", paramType = "query", required = true),
             @ApiImplicitParam(name = "column1", value = "旧列名", paramType = "query", required = true),
@@ -97,4 +104,6 @@ public class TableController {
         tableService.renameColunm(column1, column2, table);
         return this.getAllColumns(table);
     }
+
+
 }
