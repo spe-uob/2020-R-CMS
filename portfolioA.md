@@ -15,7 +15,7 @@ A simple content management system that contains the project data, such as clien
 
 ### Functional requirements
 |  | Description|
-| :--- |  ---: |
+| :--- | :--- |
 |	1|Authenticated API for other services |
 | 1.1||
 |	2|A web based UI to edit data|
