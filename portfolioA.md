@@ -44,6 +44,7 @@ In the CMS project, personal data (name, email etc.) will be collected for sorti
 
 
 ## Development Testing
+jUNIT
 | Function |Explaination| Example|
 | :---         |     :---:      |          ---: |
 |	Authenticated API for other services |||
