@@ -1,4 +1,4 @@
-package com.leon.dynamiccolumn.security;
+/*package com.leon.dynamiccolumn.security;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -12,3 +12,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
     }
 }
+*/
