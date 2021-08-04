@@ -16,7 +16,6 @@ import java.util.Optional;
 
 @EnableOpenApi
 @SpringBootApplication
-@EnableEncryptableProperties
 public class DynamiccolumnApplication {
 
     public static void main(String[] args) {
