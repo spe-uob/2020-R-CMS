@@ -4,8 +4,8 @@ spring:
   # 配置数据源
   datasource:
     url: jdbc:mysql://database-test.cxlggy9iwoub.us-east-1.rds.amazonaws.com:3306/projects?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
-    username: admin_test
-    password: ze9Vet4RE4NADVhj
+    username: client_user
+    password: ZzEWZqC9SXuVyjwq
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
