@@ -5,7 +5,7 @@ spring:
   datasource:
     url: jdbc:mysql://database-test.cxlggy9iwoub.us-east-1.rds.amazonaws.com:3306/projects?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
     username: client_user
-    password: ZzEWZqC9SXuVyjwq
+    password: ENC(BnbRWV0GBqoSwPYMU2dmEfXMPvooWWishL58PDpSbQYW8TDhEbLabzTAhc9nu/CI22K8hhnJdZQyG65KiX6S4w==)
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
