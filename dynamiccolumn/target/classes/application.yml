@@ -1,0 +1,38 @@
+server:
+  port: 8080
+spring:
+  # 配置数据源
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select '1'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+
+mybatis:
+  mapper-locations: classpath:mapper/*Dao.xml
+
+#showSql
+logging:
+  level:
+    com:
+      leon:
+        dynamiccolumn:
+          dao: debug
+
+file:
+  tmp: /Users/songwenlong/Desktop/dynamiccolumn/tmp
+
