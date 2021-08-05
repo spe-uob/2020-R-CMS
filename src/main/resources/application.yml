@@ -2,12 +2,12 @@ server:
   port: 8080
 spring:
   security:
-    basic:
-      enabled: true
     user:
       name: admin
-      password: Admin1979!
-      role: ADMIN
+      password: Admin1979
+      roles: ADMIN
+
+
   # 配置数据源
   datasource:
     url: jdbc:mysql://database-test.cxlggy9iwoub.us-east-1.rds.amazonaws.com:3306/projects?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
