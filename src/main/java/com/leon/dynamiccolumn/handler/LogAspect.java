@@ -39,9 +39,9 @@ public class LogAspect {
         String uri = request.getRequestURI();
         String method = request.getMethod();
         String args = Arrays.toString(pjp.getArgs());
-        log.info(reqId + "    请求：{}-----{}----请求参数:{}", uri, method, args);
+        log.info(reqId + "    request：{}-----{}----Request parameters:{}", uri, method, args);
         Object ret = pjp.proceed();
-        log.info(reqId + "    响应：{}-----{}----响应数据:{}", uri, method, JSONObject.toJSONString(ret));
+        log.info(reqId + "    response：{}-----{}----The response data:{}", uri, method, JSONObject.toJSONString(ret));
         return ret;
     }
 }

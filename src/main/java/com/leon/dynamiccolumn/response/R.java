@@ -21,11 +21,11 @@ public class R {
 //    private Map<String, Object> data = new HashMap<>();
     private Object data = new HashMap<>();
 
-    // 构造器私有
+    // Constructor private
     private R() {
     }
 
-    // 通用返回成功
+    // General return success
     public static R ok() {
         R r = new R();
         r.setSuccess(ResultCodeEnum.SUCCESS.getSuccess());
@@ -34,7 +34,7 @@ public class R {
         return r;
     }
 
-    // 通用返回失败，未知错误
+    // General return failed, unknown error
     public static R error() {
         R r = new R();
         r.setSuccess(ResultCodeEnum.UNKNOWN_ERROR.getSuccess());
@@ -43,7 +43,7 @@ public class R {
         return r;
     }
 
-    // 设置结果，形参为结果枚举
+    // Sets the result with the parameter as the result enumeration
     public static R setResult(ResultCodeEnum result) {
         R r = new R();
         r.setSuccess(result.getSuccess());
@@ -53,10 +53,10 @@ public class R {
     }
 
     /**
-     * ------------使用链式编程，返回类本身-----------
+     * ------------Using chained programming, return the class itself-----------
      **/
 
-    // 自定义返回数据
+    // Customize the returned data
     public R data(Object data) {
         this.setData(data);
         return this;
@@ -78,19 +78,19 @@ public class R {
         return this.setData(mapData);
     }
 
-    // 自定义状态信息
+    // Customize status information
     public R message(String message) {
         this.setMessage(message);
         return this;
     }
 
-    // 自定义状态码
+    // Custom status code
     public R code(Integer code) {
         this.setCode(code);
         return this;
     }
 
-    // 自定义返回结果
+    // Custom return results
     public R success(Boolean success) {
         this.setSuccess(success);
         return this;

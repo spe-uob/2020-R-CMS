@@ -31,19 +31,22 @@ public class DataServiceImpl implements DataService {
 
 
     /**
-     * 查询所有数据
+     * query all data
      *
      * @param table
      * @return
      */
     @Override
     public List<Map> getAllData(String table) {
+        if (!this.tableService.isExistTable(table)) {
+            throw  new UnExistTabelException();
+        }
         List<Map> data = this.dataDao.queryAll(table, null);
         return data;
     }
 
     /**
-     * 修改单挑数据
+     * modify single data
      *
      * @param table
      * @param data
@@ -63,7 +66,7 @@ public class DataServiceImpl implements DataService {
     }
 
     /**
-     * 保存数据
+     * save data
      *
      * @param data
      * @param table
@@ -82,7 +85,7 @@ public class DataServiceImpl implements DataService {
     }
 
     /**
-     * 导出数据
+     * export Excel
      *
      * @param table
      * @param columns
@@ -100,7 +103,7 @@ public class DataServiceImpl implements DataService {
     }
 
     /**
-     * 清洗列
+     * clear column
      *
      * @param data
      * @param table
@@ -109,12 +112,12 @@ public class DataServiceImpl implements DataService {
     private List<Map<String, Object>> clearColumn(List<Map<String, Object>> data, String table) {
         List<String> column = ListUtil.toCopyOnWriteArrayList(new ArrayList<>());
         data = ListUtil.toCopyOnWriteArrayList(data);
-        //格式化标题  清洗数据
+        //Format headers, clean data
         data = data.parallelStream().map(map -> {
             Map<String, Object> finalMap = new HashMap(map);
             map.forEach((k, v) -> {
                 String validKey = ColumnUtil.formatColumn(k);
-                finalMap.remove(k); //即使格式化前后是一样的，也不会异常
+                finalMap.remove(k); //Even if it is the same before and after formatting, there is no exception
                 if (finalMap.containsKey(validKey)) {
                     System.out.println(validKey);
                     throw new ConflictTitleException();
@@ -124,28 +127,28 @@ public class DataServiceImpl implements DataService {
                     column.add(validKey);
                 }
             });
-            finalMap.put(primaryColumn, RandomUtil.randomNumbers(32));//设置主键
+            finalMap.put(primaryColumn, RandomUtil.randomNumbers(32));//Set the primary key
             return finalMap;
         }).collect(Collectors.toList());
-        // 数据库中已存在的列
+        // An existing column in the database
         List<String> dbCloumns = this.tableService.getColumns(table);
         dbCloumns.remove(primaryColumn);
         dbCloumns = ListUtil.toCopyOnWriteArrayList(dbCloumns);
         List<String> needDelColumns = ListUtil.toCopyOnWriteArrayList(new ArrayList<>());
         List<String> finalDbCloumns = dbCloumns;
         dbCloumns.parallelStream().forEach(dbCloumn -> {
-            if (!column.contains(dbCloumn)) {//新数据不包含旧数据列  删除旧数据列
+            if (!column.contains(dbCloumn)) {//The new data does not contain the old data columns  delete the old column
                 needDelColumns.add(dbCloumn);
-                finalDbCloumns.remove(dbCloumn);//dbCloumns只保留旧数据中最终需要的列
+                finalDbCloumns.remove(dbCloumn);//dbCloumns only keep the columns that are ultimately needed in the old data
             } else {
-                //交集删除
-                column.remove(dbCloumn);//剩下的 全部是需要新增的列
+                //delete intersection
+                column.remove(dbCloumn);//All that remains is the column that needs to be added
             }
         });
-        //操作表结构
+        //Operation table structure
         column.parallelStream().forEach(item -> this.tableService.addColunm(item, table));
         needDelColumns.parallelStream().forEach(item -> this.tableService.delColunm(item, table));
-        //最新数据的完整列
+        //A complete column of the latest data
         column.addAll(finalDbCloumns);
         return data;
     }

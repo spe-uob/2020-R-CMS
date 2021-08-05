@@ -18,7 +18,7 @@ public class TableServiceImpl implements TableService {
     private TableDao tableDao;
 
     /**
-     * 数据库名称
+     * Database name
      */
     private String store;
 
@@ -29,7 +29,7 @@ public class TableServiceImpl implements TableService {
     }
 
     /**
-     * 获取所有列
+     * Get all columns
      *
      * @param tableName
      * @return
@@ -43,7 +43,7 @@ public class TableServiceImpl implements TableService {
     }
 
     /**
-     * 获取所有表
+     * Get all tables
      *
      * @return
      */
@@ -53,7 +53,7 @@ public class TableServiceImpl implements TableService {
     }
 
     /**
-     * 判断表是否存在
+     * Determine whether the table exists
      *
      * @param tableName
      * @return
@@ -65,7 +65,7 @@ public class TableServiceImpl implements TableService {
 
 
     /**
-     * 判断列是否存在
+     * Determine whether the column exists
      *
      * @param tableName
      * @return
@@ -79,7 +79,7 @@ public class TableServiceImpl implements TableService {
     }
 
     /**
-     * 增加列
+     * Increase the column
      *
      * @param column
      * @param tableName
@@ -93,7 +93,7 @@ public class TableServiceImpl implements TableService {
     }
 
     /**
-     * 删除列
+     * Delete the column
      *
      * @param column
      * @param tableName
@@ -110,10 +110,10 @@ public class TableServiceImpl implements TableService {
     }
 
     /**
-     * 重命名列
+     * Rename columns
      *
-     * @param column1   旧
-     * @param column2   新
+     * @param column1   old
+     * @param column2   new
      * @param tableName
      */
     @Override
@@ -125,7 +125,7 @@ public class TableServiceImpl implements TableService {
             throw new UnExistColumnException();
         }
         column2 = ColumnUtil.formatColumn(column2);
-        //先修改类型
+        //Change the type first
         this.tableDao.initColunm(column1, tableName);
         this.tableDao.renameColunm(column1, column2, tableName);
     }

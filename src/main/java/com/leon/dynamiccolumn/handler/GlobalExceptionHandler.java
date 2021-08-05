@@ -18,13 +18,13 @@ import org.springframework.web.client.HttpClientErrorException;
 public class GlobalExceptionHandler {
 
     /**
-     * -------- 通用异常处理方法 --------
+     * -------- Common exception handling methods --------
      **/
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public R error(Exception e) {
         log.error(ExceptionUtil.getMessage(e));
-        return R.error();    // 通用异常结果
+        return R.error();    // General anomaly result
     }
 
     @ExceptionHandler(UnExistTabelException.class)
@@ -49,7 +49,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * -------- 指定异常处理方法 --------
+     * -------- Specifies the exception handling method --------
      **/
     @ExceptionHandler(NullPointerException.class)
     @ResponseBody
