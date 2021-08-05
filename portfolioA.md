@@ -20,7 +20,13 @@ A simple content management system that contains the project data, such as clien
 |  | Description|
 | :--- | :--- |
 |	1|Authenticated API for other services |
-| 1.1||
+| 1.1|getAllProjects|
+|1.2|getProjectDetails|
+|1.3|getProjectName|
+|1.4|getClientName|
+|1.5|getClientEmail|
+|1.6|getProjectURL|
+|1.7|table/tables|
 |	2|A web based UI to edit data|
 |2.1|users can log into the web in seconds|
 |2.2|users can input and save personal information|
