@@ -13,7 +13,7 @@ A simple content management system that contains the project data, such as clien
 #### SPEAC
 
 #### Clients
-
+Daniel Schein, PhD(Bristol, )Senior Lecturer in Computer Science, research focus on improving our understanding of the environmental impact from information and communication technologies, currently leading the technical development of the DIMPACT tool, also develop infrastructure for sensing of urban environments.
 #### MS Forms Users
 
 ### Functional requirements
