@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leon.dynamiccolumn.dao.DataDao">
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultType="java.util.Map">
+        select
+        <choose>
+            <when test="columns != null and columns.size() > 0">
+                <foreach collection="columns" item="column" separator=",">
+                    ${column}
+                </foreach>
+            </when>
+            <otherwise>
+                *
+            </otherwise>
+        </choose>
+        from ${tableName}
+    </select>
+
+    <update id="updateById">
+        update ${tableName} set
+        <foreach collection="data.entrySet()" index="column" item="value" separator=",">
+            `${column}`=#{value}
+        </foreach>
+        where
+        `${primaryKey}` = #{data[${primaryKey}]}
+    </update>
+
+    <insert id="insertBatch">
+        <foreach collection="data" item="map" separator=";">
+            insert into ${table}
+            <foreach collection="map.keys" item="column" separator="," open="(" close=")">
+                ${column}
+            </foreach>
+            values
+            <foreach collection="map.values" item="value" separator="," open="(" close=")">
+                #{value}
+            </foreach>
+        </foreach>
+    </insert>
+</mapper>
+
