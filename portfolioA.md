@@ -53,7 +53,7 @@ In the CMS project, personal data (name, email etc.) will be collected for sorti
 jUNIT
 | Function |Explaination| Expect|
 | :---         |     :---:      |          ---: |
-|	connect to database |||
+|	connect to database ||Print "success"|
 | A web based UI to edit data |DB schema needs to be easily modifiable, by adding and removing columns||
 |	Import/Export |Project data initially is provided by clients via an MS Form. MS Form provides easy exports to Excel. This excel data will be imported into the CMS||
 
