@@ -26,19 +26,20 @@ public class ProjectServiceImpl implements ProjectService {
         return projectsList;
     }
 
-    //get a single row by id
+    //get a single row by name
     @Override
-    public ProjectEntity getProjectEntityDetails(Long projectID) {
-        Optional<ProjectEntity> result = projectsRepository.findById(projectID);
-        if(result.isPresent()) {
-            return result.get();
+    public ProjectEntity getProjectEntityDetails(String projectEntityName) {
+        Iterable<ProjectEntity> projects = projectsRepository.findAll();
+        for (ProjectEntity project: projects) {
+            if (project.getProjectName().equals(projectEntityName)) {
+                return project;
+            }
         }
-        else {
-            return new ProjectEntity();
-        }
+        return new ProjectEntity();
     }
 
     //get project name by id
+    /*
     @Override
     public String getProjectEntityName(Long projectID) {
         Optional<ProjectEntity> result = projectsRepository.findById(projectID);
@@ -48,41 +49,66 @@ public class ProjectServiceImpl implements ProjectService {
         else {
             return "Name not found: project does not exist";
         }
-    }
+    }*/
 
-    //get client name by project id
+    //get client name by project name
     @Override
-    public String getProjectEntityClientName(Long projectID){
+    public String getProjectEntityClientName(String projectEntityName){
+        /*
         Optional<ProjectEntity> result = projectsRepository.findById(projectID);
         if(result.isPresent()) {
             return result.get().getClientName();
         }
         else {
             return "Client not found: project does not exist";
+        }*/
+        Iterable<ProjectEntity> projects = projectsRepository.findAll();
+        for (ProjectEntity project: projects) {
+            if (project.getProjectName().equals(projectEntityName)) {
+                return project.getClientName();
+            }
         }
+        return "Client not found: project does not exist";
     }
 
     //get client email by project id
     @Override
-    public String getProjectEntityEmail(Long projectID) {
+    public String getProjectEntityEmail(String projectEntityName) {
+        /*
         Optional<ProjectEntity> result = projectsRepository.findById(projectID);
         if(result.isPresent()) {
             return result.get().getClientEmail();
         }
         else {
             return "Email not found: project does not exist";
+        }*/
+        Iterable<ProjectEntity> projects = projectsRepository.findAll();
+        for (ProjectEntity project: projects) {
+            if (project.getProjectName().equals(projectEntityName)) {
+                return project.getClientEmail();
+            }
         }
+        return "Email not found: project does not exist";
     }
 
     //get GitHub URL by project id
     @Override
-    public String getProjectGitHubURL(Long projectID) {
+    public String getProjectGitHubURL(String projectEntityName) {
+        /*
         Optional<ProjectEntity> result = projectsRepository.findById(projectID);
         if(result.isPresent()) {
             return result.get().getGitHubURL();
         }
         else{
             return "URL not found: project does not exist";
+        }*/
+        Iterable<ProjectEntity> projects = projectsRepository.findAll();
+        for (ProjectEntity project: projects) {
+            if (project.getProjectName().equals(projectEntityName)) {
+                return project.getGitHubURL();
+            }
         }
+        return "URL not found: project does not exist";
     }
+
 }
