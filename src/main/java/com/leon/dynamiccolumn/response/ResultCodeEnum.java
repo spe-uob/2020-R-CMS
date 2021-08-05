@@ -5,21 +5,21 @@ import lombok.Getter;
 @Getter
 public enum ResultCodeEnum {
 
-    SUCCESS(true, 20000, "成功"),
-    UNKNOWN_ERROR(false, 20001, "未知错误"),
-    PARAM_ERROR(false, 20002, "参数错误"),
-    HTTP_CLIENT_ERROR(false, 20003, "http客户端错误"),
-    NULL_POINT(false, 20004, "空指针异常"),
-    UNEXIST_COLUMN(false, 20005, "列不存在"),
-    UNEXIST_TABLE(false, 20006, "表不存在"),
-    CONFLICT_TITLE(false, 20007, "标题重复"),
+    SUCCESS(true, 20000, "success"),
+    UNKNOWN_ERROR(false, 20001, "unknown error"),
+    PARAM_ERROR(false, 20002, "Parameter error"),
+    HTTP_CLIENT_ERROR(false, 20003, "http Client error"),
+    NULL_POINT(false, 20004, "Null pointer exception"),
+    UNEXIST_COLUMN(false, 20005, "Column does not exist"),
+    UNEXIST_TABLE(false, 20006, "Table does not exist"),
+    CONFLICT_TITLE(false, 20007, "The title to repeat"),
     ;
 
-    // 响应是否成功
+    // Response successful
     private Boolean success;
-    // 响应状态码
+    // Response status code
     private Integer code;
-    // 响应信息
+    // Response information
     private String message;
 
     ResultCodeEnum(boolean success, Integer code, String message) {

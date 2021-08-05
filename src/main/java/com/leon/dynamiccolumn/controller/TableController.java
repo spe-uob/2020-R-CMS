@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Api(value = "表结构管理", tags = {"用户操作表结构接口"})
+@Api(value = "manage table structure", tags = {"The interface of the user operation table structure"})
 @RestController
 @RequestMapping("table")
 public class TableController {
@@ -26,9 +26,8 @@ public class TableController {
      * @param table
      * @return
      */
-
-    @ApiOperation(value = "查询列", notes = "查询所有列")
-    @ApiImplicitParam(name = "table", value = "表名", paramType = "query", required = true)
+    @ApiOperation(value = "query column", notes = "query all collumn")
+    @ApiImplicitParam(name = "table", value = "table name", paramType = "query", required = true)
     @GetMapping("columns")
     public R getAllColumns(@RequestParam("table") String table) {
         List<String> columns = tableService.getColumns(table);
@@ -36,12 +35,11 @@ public class TableController {
     }
 
     /**
-     * 查询所有表
+     * query all tables
      *
      * @return
      */
-
-    @ApiOperation(value = "查询表", notes = "查询所有表")
+    @ApiOperation(value = "query table", notes = "query all table")
     @GetMapping("tables")
     public R getAllTables() {
         List<String> tables = tableService.getTables();
@@ -50,35 +48,31 @@ public class TableController {
 
 
     /**
-     * 添加列
+     * add column
      *
      * @param table
      * @param column
      * @return
      */
-
-    @ApiOperation(value = "增加列", notes = "新增一列")
-    @ApiImplicitParams({@ApiImplicitParam(name = "table", value = "表名", paramType = "query", required = true),
-            @ApiImplicitParam(name = "column", value = "列名", paramType = "query", required = true)})
+    @ApiOperation(value = "add column", notes = "add a new column")
+    @ApiImplicitParams({@ApiImplicitParam(name = "table", value = "table name", paramType = "query", required = true),
+            @ApiImplicitParam(name = "column", value = "column name", paramType = "query", required = true)})
     @PostMapping("column")
     public R addColumn(@RequestParam("table") String table, @RequestParam("column") String column) {
         tableService.addColunm(column, table);
         return this.getAllColumns(table);
     }
 
-
-
     /**
-     * 删除列
+     * delete column
      *
      * @param table
      * @param column
      * @return
      */
-
-    @ApiOperation(value = "删除列", notes = "删除一列")
-    @ApiImplicitParams({@ApiImplicitParam(name = "table", value = "表名", paramType = "query", required = true),
-            @ApiImplicitParam(name = "column", value = "列名", paramType = "query", required = true)})
+    @ApiOperation(value = "delete column", notes = "delete a column")
+    @ApiImplicitParams({@ApiImplicitParam(name = "table", value = "table name", paramType = "query", required = true),
+            @ApiImplicitParam(name = "column", value = "column name", paramType = "query", required = true)})
     @DeleteMapping("column")
     public R delColumn(@RequestParam("table") String table, @RequestParam("column") String column) {
         tableService.delColunm(column, table);
@@ -86,24 +80,21 @@ public class TableController {
     }
 
     /**
-     * 修改列
+     * modify cloumn
      *
      * @param table
      * @param column1
      * @param column2
      * @return
      */
-
-    @ApiOperation(value = "修改列", notes = "修改列名")
-    @ApiImplicitParams({@ApiImplicitParam(name = "table", value = "表名", paramType = "query", required = true),
-            @ApiImplicitParam(name = "column1", value = "旧列名", paramType = "query", required = true),
-            @ApiImplicitParam(name = "column2", value = "新列名", paramType = "query", required = true)
+    @ApiOperation(value = "modify column", notes = "modify column")
+    @ApiImplicitParams({@ApiImplicitParam(name = "table", value = "table name", paramType = "query", required = true),
+            @ApiImplicitParam(name = "column1", value = "old column name ", paramType = "query", required = true),
+            @ApiImplicitParam(name = "column2", value = "new column name", paramType = "query", required = true)
     })
     @PutMapping("column")
     public R renameColumn(@RequestParam("table") String table, @RequestParam("column1") String column1, @RequestParam("column2") String column2) {
         tableService.renameColunm(column1, column2, table);
         return this.getAllColumns(table);
     }
-
-
 }

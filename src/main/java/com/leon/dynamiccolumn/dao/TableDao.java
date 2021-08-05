@@ -11,7 +11,7 @@ import java.util.List;
 public interface TableDao {
 
     /**
-     * 获取所有列名
+     * Gets all column names
      *
      * @param tableName
      * @param store
@@ -21,7 +21,7 @@ public interface TableDao {
     List<String> getColumns(@Param("tableName") String tableName, @Param("store") String store);
 
     /**
-     * 获取所有表
+     * Get all tables
      *
      * @param store
      * @return

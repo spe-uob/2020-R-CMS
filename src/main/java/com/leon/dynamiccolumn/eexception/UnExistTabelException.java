@@ -1,7 +1,7 @@
 package com.leon.dynamiccolumn.eexception;
 
 /**
- * 表异常
+ * Abnormal table
  */
 public class UnExistTabelException extends RuntimeException {
 

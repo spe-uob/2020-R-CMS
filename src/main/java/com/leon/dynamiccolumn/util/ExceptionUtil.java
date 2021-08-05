@@ -10,7 +10,7 @@ import java.io.StringWriter;
 public class ExceptionUtil {
 
     /**
-     * 打印异常信息
+     * Printing Abnormal Information
      */
     public static String getMessage(Exception e) {
         String swStr = null;
