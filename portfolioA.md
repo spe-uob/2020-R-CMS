@@ -55,3 +55,5 @@ jUNIT
 
 
 ## Reflection
+we're fragmented at the begining because it's hard to divide project combined with time limit. After the team disscuss, we give up openXava as we can not apply Spring on it well. However HTML/CSS works well. 
+
