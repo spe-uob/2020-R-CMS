@@ -8,10 +8,14 @@ import java.util.ArrayList;
 public interface ProjectService {
 
     ArrayList<ProjectEntity> getAllProjectEntities();
-    ProjectEntity getProjectEntityDetails(Long projectID);
-    String getProjectEntityName(Long projectID);
-    String getProjectEntityClientName(Long projectID);
-    String getProjectEntityEmail(Long projectID);
-    String getProjectGitHubURL(Long projectID);
+    //getting project fields by project name
+    ProjectEntity getProjectEntityDetails(String projectEntityName);
+   // String getProjectEntityName(String projectEntityName);
+    String getProjectEntityClientName(String projectEntityName);
+    String getProjectEntityEmail(String projectEntityName);
+    String getProjectGitHubURL(String projectEntityName);
+
+
+
 
 }

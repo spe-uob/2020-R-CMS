@@ -25,27 +25,28 @@ public class RestApiController {
     }
     
     @RequestMapping("/getProjectDetails")
-    public ProjectEntity getProjectDetails(@RequestParam("id") Long projectID) {
-        return projectService.getProjectEntityDetails(projectID);
+    public ProjectEntity getProjectDetails(@RequestParam("project_name") String projectName) {
+        return projectService.getProjectEntityDetails(projectName);
     }
 
+    /*
     @RequestMapping("/getProjectName")
-    public String getProjectName(@RequestParam("id") Long projectID) {
-        return projectService.getProjectEntityName(projectID);
+    public String getProjectName(@RequestParam("project_name") String projectName) {
+        return projectService.getProjectEntityName(projectName);
     }
-
+    */
     @RequestMapping("/getClientName")
-    public String getClientName(@RequestParam("id") Long projectID) {
-        return projectService.getProjectEntityClientName(projectID);
+    public String getClientName(@RequestParam("project_name") String projectName) {
+        return projectService.getProjectEntityClientName(projectName);
     }
 
     @RequestMapping("/getClientEmail")
-    public String getClientEmail(@RequestParam("id") Long projectID) {
-        return projectService.getProjectEntityEmail(projectID);
+    public String getClientEmail(@RequestParam("project_name") String projectName) {
+        return projectService.getProjectEntityEmail(projectName);
     }
 
     @RequestMapping("/getProjectURL")
-    public String getProjectURL(@RequestParam("id") Long projectID) {
-        return projectService.getProjectGitHubURL(projectID);
+    public String getProjectURL(@RequestParam("project_name") String projectName) {
+        return projectService.getProjectGitHubURL(projectName);
     }
 }
