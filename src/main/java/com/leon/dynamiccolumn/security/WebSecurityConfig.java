@@ -25,7 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
       http.authorizeRequests()
-              .antMatchers("/addproject", "/editproject","/deleteproject").hasRole("ADMIN")
+              .antMatchers("/addproject", "/editproject","/deleteproject","/swagger-ui/index.html").hasRole("ADMIN")
               .antMatchers("/**").permitAll()
                       .and().formLogin();
 
