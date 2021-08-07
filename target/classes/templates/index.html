@@ -4,37 +4,28 @@
     <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
     <title>Index</title>
-    <style> h1 {border: double 5px black;
-                background-color: lightblue;}
-            h3 {border: double 5px black;
-                background-color:lightblue;}
-            .div1 {border: double 5px black;
-                background-color: lightblue;
-                text-align: center;}
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body style="background-color: darkturquoise">
-    <h1>CMS Index page</h1>
     <div class="div1">
+        <h1>CMS Index page</h1>
         <a href="/addproject">Add a project</a>
         <a href="/editproject">Edit a project</a>
         <a href="/deleteproject">Delete a project</a>
-    </div>
-    <div>
-        <h3>Working links</h3>
-        <ul>
+
+<!--        <ul>
             <li>root: <a href="/">/</a></li>
             <li>this page: <a href="/index">/index</a></li>
-        </ul>
-        <p>API calls /getProjectDetails, /getClientName, /getClientEmail and /getProjectURL must be suffixed with ?project_name=PROJECT_NAME where PROJECT_NAME is the exact name of an existing project. Spaces in PROJECT_NAME must be replaced with the + symbol. All existing projects are returned and can therefore be viewed by the /getAllProjects API call.</p>
+        </ul>-->
+        <p>API calls <a href="/getProjectDetails">/getProjectDetails</a>, <a href="/getClientName">/getClientName</a>, <a href="/getClientEmail">/getClientEmail</a> and <a href="/getProjectURL">/getProjectURL</a> must be suffixed with ?project_name=PROJECT_NAME where PROJECT_NAME is the exact name of an existing project. Spaces in PROJECT_NAME must be replaced with the + symbol. All existing projects are returned and can therefore be viewed by the <a href="/getAllProjects" target="_blank">/getAllProjects</a> API call.</p>
         <ul>
-            <li>API : <a href="/getAllProjects" target="_blank">/getAllProjects</a></li>
-            <li>API : <a href="/getProjectDetails">/getProjectDetails</a></li>
+            <!--<li>API : <a href="/getAllProjects" target="_blank">/getAllProjects</a></li>-->
+            <!--<li>API : <a href="/getProjectDetails">/getProjectDetails</a></li>-->
             <!--<li>API : <a href="/getProjectName">/getProjectName</a></li>-->
-            <li>API : <a href="/getClientName">/getClientName</a></li>
-            <li>API : <a href="/getClientEmail">/getClientEmail</a></li>
-            <li>API : <a href="/getProjectURL">/getProjectURL</a></li>
-            <li>API : <a href="/swagger-ui/index.html" target="_blank">Swagger UI for REST API and direct table modification</a></li>
+            <!--<li>API : <a href="/getClientName">/getClientName</a></li>-->
+            <!--<li>API : <a href="/getClientEmail">/getClientEmail</a></li>-->
+            <!--<li>API : <a href="/getProjectURL">/getProjectURL</a></li>-->
+            <!--<li>API : <a href="/swagger-ui/index.html" target="_blank">Swagger UI for REST API and direct table modification</a></li>-->
         </ul>
     </div>
 </body>

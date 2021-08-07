@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    border: double 5px black;
+    background-color: lightblue;
+}
+h3 {border: double 5px black;
+    background-color:lightblue;}
+.div1 {border: double 5px black;
+    background-color: lightblue;
+    text-align: center;}
