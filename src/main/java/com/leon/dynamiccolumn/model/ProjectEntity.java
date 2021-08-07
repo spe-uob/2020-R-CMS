@@ -1,4 +1,4 @@
-package com.leon.dynamiccolumn.projectentity;
+package com.leon.dynamiccolumn.model;
 import lombok.Getter;
 import lombok.Setter;
 

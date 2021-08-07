@@ -1,21 +1,24 @@
 package com.leon.dynamiccolumn.controller;
 import com.leon.dynamiccolumn.repository.ProjectRepository;
+import com.leon.dynamiccolumn.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.leon.dynamiccolumn.projectentity.ProjectEntity;
+import com.leon.dynamiccolumn.model.ProjectEntity;
+
+import java.util.ArrayList;
 import java.util.Optional;
-import com.leon.*;
 
 @Controller
 public class WebController {
 
     @Autowired
     ProjectRepository projectsRepo;
+
+    @Autowired
+    ProjectService projectService;
 
     @GetMapping("/")
     public String doGetRoot() {
@@ -31,6 +34,13 @@ public class WebController {
     @GetMapping("/error")
     public String doGetError() {
         return "error";
+    }
+
+    @GetMapping("/allprojectstable")
+    public String doGetAllProjectsTable(Model model){
+        ArrayList<ProjectEntity> allProjectsAsList = projectService.getAllProjectEntities();
+        model.addAttribute("projectslist", allProjectsAsList);
+        return "allprojectstable";
     }
 
     @GetMapping("/addproject")

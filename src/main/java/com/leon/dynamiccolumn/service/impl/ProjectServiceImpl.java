@@ -1,13 +1,12 @@
 package com.leon.dynamiccolumn.service.impl;
 
-import com.leon.dynamiccolumn.projectentity.ProjectEntity;
+import com.leon.dynamiccolumn.model.ProjectEntity;
 import com.leon.dynamiccolumn.repository.ProjectRepository;
 import com.leon.dynamiccolumn.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Optional;
 
 @Service
 public class ProjectServiceImpl implements ProjectService {

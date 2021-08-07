@@ -1,7 +1,7 @@
 package com.leon.dynamiccolumn.service;
 
 
-import com.leon.dynamiccolumn.projectentity.ProjectEntity;
+import com.leon.dynamiccolumn.model.ProjectEntity;
 
 import java.util.ArrayList;
 

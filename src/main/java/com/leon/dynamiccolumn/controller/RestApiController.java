@@ -1,17 +1,13 @@
 package com.leon.dynamiccolumn.controller;
 
-import com.leon.dynamiccolumn.projectentity.ProjectEntity;
-import com.leon.dynamiccolumn.repository.ProjectRepository;
+import com.leon.dynamiccolumn.model.ProjectEntity;
 import com.leon.dynamiccolumn.service.ProjectService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.Optional;
 
 @RestController
 public class RestApiController {
