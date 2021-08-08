@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit a project</title>
+    <style>h1 {border: double 5px black;
+        background-color: lightblue;} </style>
     <link rel="stylesheet" type="text/css" href="formstyle.css">
 </head>
-<body>
+<body style="background-color: darkturquoise">
   <div>
       <h1>Edit a project</h1>
   </div>
@@ -18,27 +20,27 @@
   <div>
       <form action="/editExistingProject" method="GET">
           <div>
-              <label for="projectIdSelector">Enter project id</label>
+              <label style="border-bottom-style: outset"  for="projectIdSelector">Enter project id</label>
               <input type="number" name="id" id="projectIdSelector" placeholder="ID required" required>
           </div>
           <div>
-              <label for="projectName" id="projectNameLabel">Project Name</label>
+              <label style="border-bottom-style: outset"  for="projectName" id="projectNameLabel">Project Name</label>
               <input name="projectname" type="text" id="projectName" placeholder="Type to change project name" maxlength="50">
           </div>
           <div>
-              <label for="projectBrief" id="projectBriefLabel">Project Brief</label>
+              <label style="border-bottom-style: outset"  for="projectBrief" id="projectBriefLabel">Project Brief</label>
               <textarea name="projectbrief" id="projectBrief" rows="5" placeholder="Type to change project brief" maxlength="200"></textarea>
           </div>
           <div>
-              <label for="projectClientName" id="projectClientNameLabel">Client Name</label>
+              <label style="border-bottom-style: outset"  for="projectClientName" id="projectClientNameLabel">Client Name</label>
               <input name="clientname" type="text" id="projectClientName" placeholder="Type to change client name" maxlength="50">
           </div>
           <div>
-              <label for="projectClientEmail" id="projectClientEmailLabel">Client Email</label>
+              <label style="border-bottom-style: outset"  for="projectClientEmail" id="projectClientEmailLabel">Client Email</label>
               <input name="clientemail" type="email" id="projectClientEmail" placeholder="Type to change client email (person@example.com)" maxlength="50">
           </div>
           <div>
-              <label for="projectGitHubUrl" id="projectGitHubUrlLabel">GitHub URL</label>
+              <label style="border-bottom-style: outset"  for="projectGitHubUrl" id="projectGitHubUrlLabel">GitHub URL</label>
               <input name="githuburl" type="text" id="projectGitHubUrl" placeholder="Type to change GitHub URL" maxlength="50">
           </div>
           <div>

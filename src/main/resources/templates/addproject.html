@@ -11,7 +11,7 @@
 
     </style>
 </head>
-<body>
+<body style="background-color: darkturquoise">
     <h1>Add Project</h1>
     <!--
     <form action="/result" method="GET">
@@ -25,19 +25,19 @@
     <div  id="addProjectFormDiv" class="container">
     <form id="addProjectForm" action="/addNewProject" method="GET">
         <div>
-            <label for="projectName" id="projectNameLabel">Project Name</label>
+            <label style="border-bottom-style: outset"  for="projectName" id="projectNameLabel">Project Name</label>
             <input name="projectname" type="text" id="projectName" placeholder="Enter project name" maxlength="50" required>
         </div>
         <div>
-            <label for="projectBrief" id="projectBriefLabel">Project Brief</label>
+            <label style="border-bottom-style: outset"  for="projectBrief" id="projectBriefLabel">Project Brief</label>
             <textarea name="projectbrief" id="projectBrief" rows="5" placeholder="Add a brief description" maxlength="200" required></textarea>
         </div>
         <div>
-            <label for="projectClientName" id="projectClientNameLabel">Client Name</label>
+            <label style="border-bottom-style: outset"  for="projectClientName" id="projectClientNameLabel">Client Name</label>
             <input name="clientname" type="text" id="projectClientName" placeholder="Enter Client name" maxlength="50" required>
         </div>
         <div>
-            <label for="projectClientEmail" id="projectClientEmailLabel">Client Email</label>
+            <label  style="border-bottom-style: outset"  for="projectClientEmail" id="projectClientEmailLabel">Client Email</label>
             <input name="clientemail" type="email" id="projectClientEmail" placeholder="person@example.com" maxlength="50" required>
         </div>
         <!--
@@ -52,7 +52,7 @@
         </div>
         -->
         <div>
-            <label for="projectGitHubUrl" id="projectGitHubUrlLabel">GitHub URL</label>
+            <label style="border-bottom-style: outset"  for="projectGitHubUrl" id="projectGitHubUrlLabel">GitHub URL</label>
             <input name="githuburl" type="text" id="projectGitHubUrl" maxlength="50" required>
         </div>
         <!--

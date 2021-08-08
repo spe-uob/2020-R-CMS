@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Delete a project</title>
+    <style>h1 {border: double 5px black;
+    background-color: lightblue;} </style>
     <link rel="stylesheet" href="delete.css">
 </head>
-<body>
+<body style="background-color: darkturquoise">
     <div>
         <h1>Delete a project</h1>
     </div>
@@ -18,7 +20,7 @@
     <div>
       <form action="/deleteExistingProject" method="GET">
           <div>
-            <label for="projectIdSelector">Enter project id</label>
+            <label style="border-bottom-style: outset"  for="projectIdSelector">Enter project id</label>
             <input id=projectIdSelector name="id" type="number" required>
           </div>
           <div>
