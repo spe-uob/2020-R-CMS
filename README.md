@@ -1,4 +1,4 @@
-# SPE CMS and API 
+# SPE Content Management System (CMS)
 
 (adapted from CMS project brief)
 
