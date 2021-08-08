@@ -2,18 +2,37 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h1 {
+    text-align: center;
+}
+
+
+#addProjectFormDiv {
+    display: block;
+    text-align: center;
+}
+
 form {
-    display: table;
-    width : 400px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    width : 50%;
+    max-width: 420px;
+    background-color: #eeeeee;
+    border: solid 1px;
+    border-color: black;
+
+}
+.form_input {
     max-width: 400px;
 }
 
 #addProjectForm {
-    align-self: center;
+    padding: 10px;
 }
-
-label {
-    display: table-cell;
+#projectBrief {
+    max-width: 402px;
 }
 
 input {
