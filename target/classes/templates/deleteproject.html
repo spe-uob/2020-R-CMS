@@ -3,30 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Delete a project</title>
-    <style>h1 {border: double 5px black;
-    background-color: lightblue;} </style>
     <link rel="stylesheet" href="delete.css">
 </head>
-<body style="background-color: darkturquoise">
+<body>
     <div>
         <h1>Delete a project</h1>
     </div>
-    <div>
-        <a href="/index">Back</a>
-    </div>
-    <div>
-        <a href="/allprojectstable" target="_blank">View all existing projects</a>
-    </div>
-    <div>
-      <form action="/deleteExistingProject" method="GET">
-          <div>
-            <label style="border-bottom-style: outset"  for="projectIdSelector">Enter project id</label>
-            <input id=projectIdSelector name="id" type="number" required>
-          </div>
-          <div>
-              <button type="submit">Submit</button>
-          </div>
-      </form>
+    <div id="deleteFormDiv">
+        <div>
+            <a href="/index">Back</a>
+        </div>
+        <div>
+            <a href="/allprojectstable" target="_blank">View all existing projects</a>
+        </div>
+        <form action="/deleteExistingProject" method="GET">
+            <div>
+                <label for="projectIdSelector">Enter project id</label>
+                <input id=projectIdSelector name="id" type="number" required>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>
