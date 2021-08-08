@@ -12,7 +12,7 @@
         <h1>All projects</h1>
     </div>
     <div>
-        <a href="/index">Home</a>
+        <a href="javascript:history.back()">Previous page</a>
     </div>
     <div>
         <table  id="tbl_exporttable_to_xls">
@@ -29,7 +29,7 @@
                 <td th:text="${projectEntity.id}"></td>
                 <td th:text="${projectEntity.projectBrief}"></td>
                 <td th:text="${projectEntity.clientName}"></td>
-                <td th:text="${projectEntity.clientName}"></td>
+                <td th:text="${projectEntity.clientEmail}"></td>
                 <td th:text="${projectEntity.gitHubURL}"></td>
             </tr>
         </table>
