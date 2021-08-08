@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+</head>
     <meta charset="UTF-8">
     <title>All projects</title>
     <link rel="stylesheet" href="projectstable.css">
@@ -17,7 +19,7 @@
         <h1>All projects</h1>
     </div>
     <div>
-        <table>
+        <table  id="tbl_exporttable_to_xls">
             <tr>
                 <th>Project Name</th>
                 <th>Project ID</th>
@@ -36,5 +38,18 @@
             </tr>
         </table>
     </div>
+
+<button onclick="ExportToExcel('xlsx')">Export table to excel</button>
+<script>
+
+    function ExportToExcel(type, fn, dl) {
+        var elt = document.getElementById('tbl_exporttable_to_xls');
+        var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+        return dl ?
+            XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
+            XLSX.writeFile(wb, fn || ('MySheetName.' + (type || 'xlsx')));
+    }
+
+</script>
 </body>
 </html>
