@@ -1,7 +1,5 @@
 # SPE Content Management System (CMS)
 
-(adapted from CMS project brief)
-
 ### Vision
 A simple content management system that contains project data such as:
  - client name
