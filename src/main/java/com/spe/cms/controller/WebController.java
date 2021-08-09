@@ -62,7 +62,13 @@ public class WebController {
 		String projectBrief = "test";
 		String clientName = "test";
 		String clientEmail = "test";
-		String gitHubURL = "test";*/
+		String gitHubURL = "test";*/    //id, name, brief, client, email, url
+            Iterable<ProjectEntity> projectEntities = projectsRepo.findAll();
+            for (ProjectEntity p: projectEntities) {
+                if (p.getProjectName().equals(projectName)) {
+                    return "unsuccessfuladd";
+                }
+            }
 
         ProjectEntity newProject = new ProjectEntity(projectName, projectBrief, clientName, clientEmail, gitHubURL);
         projectsRepo.save(newProject);
