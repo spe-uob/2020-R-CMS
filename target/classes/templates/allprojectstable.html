@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>All projects</title>
     <link rel="stylesheet" href="projectstable.css">
+
 </head>
 <body>
     <div>
@@ -15,7 +16,7 @@
         <a href="/index">Home</a>
     </div>
     <div>
-        <table  id="tbl_exporttable_to_xls">
+        <table  id="projectsTable">
             <tr style="background-color: #333333; color: white">
                 <th>Project Name</th>
                 <th>Project ID</th>
@@ -35,11 +36,12 @@
         </table>
     </div>
 
-<button onclick="ExportToExcel('xlsx')">Export table to excel</button>
+<button style="cursor: pointer" onclick="ExportToExcel('xlsx')">Export table to excel</button>
+
 <script>
 
     function ExportToExcel(type, fn, dl) {
-        var elt = document.getElementById('tbl_exporttable_to_xls');
+        var elt = document.getElementById('projectsTable');
         var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
         return dl ?
             XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
