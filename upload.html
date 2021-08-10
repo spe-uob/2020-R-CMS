@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>upload</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      #container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <input type="file" name="" id="file" />
+      <button id="upload">upload</button>
+    </div>
+    <script>
+      var button = document.getElementById("upload");
+      var input = document.getElementById("file");
+      button.addEventListener("click", () => {
+        console.log("upload!");
+        upload();
+      });
+      function upload() {
+        var url = "/data/upload";
+        var file = input.files[0];
+        var form = new FormData();
+        var xhr = new XMLHttpRequest();
+
+        form.append("file", file);
+
+        xhr.open("post", url);
+        xhr.send(form);
+        xhr.onload = done();
+      }
+      function done() {
+        alert("upload done");
+      }
+    </script>
+  </body>
+</html>
