@@ -32,9 +32,7 @@ form {
     width : 50%;
     max-width: 420px;
     background-color: #eeeeee;
-    border: solid 1px;
-    border-color: black;
-
+    border-radius: 10px;
 }
 .form_input {
     max-width: 400px;
