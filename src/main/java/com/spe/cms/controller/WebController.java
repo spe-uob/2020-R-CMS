@@ -116,7 +116,9 @@ public class WebController {
     }
 
     @GetMapping("/deleteproject")
-    public String doGetDeleteProject() {
+    public String doGetDeleteProject(Model model) {
+        ArrayList<ProjectEntity> allProjectsAsList = projectService.getAllProjectEntities();
+        model.addAttribute("projectslist", allProjectsAsList);
         return "deleteproject";
     }
     @GetMapping("/deleteExistingProject")
