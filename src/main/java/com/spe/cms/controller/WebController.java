@@ -76,7 +76,9 @@ public class WebController {
     }
 
     @GetMapping("/editproject")
-    public String doGetEditProject() {
+    public String doGetEditProject(Model model) {
+        ArrayList<ProjectEntity> allProjectsAsList = projectService.getAllProjectEntities();
+        model.addAttribute("projectslist", allProjectsAsList);
         return "editproject";
     }
 

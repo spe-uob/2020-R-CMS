@@ -1,21 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Edit a project</title>
     <link rel="stylesheet" type="text/css" href="formstyle.css">
+    <link rel="stylesheet" href="projectstable.css">
 </head>
 
 <body>
-  <div>
-      <h1>Edit a project</h1>
-  </div>
   <div id="projectFormDiv">
+      <div>
+          <h1>Edit a project</h1>
+      </div>
       <div>
           <a href="/index">Home</a>
       </div>
       <div>
-          <a href="/allprojectstable" target="_blank">View all existing projects</a>
+          <table  id="projectsTable">
+              <tr style="background-color: #333333; color: white">
+                  <th>Project ID</th>
+                  <th>Project Name</th>
+                  <th>Project Brief</th>
+                  <th>Client Name</th>
+                  <th>Client Email</th>
+                  <th>GitHub URL</th>
+              </tr>
+              <tr th:each="projectEntity : ${projectslist}">
+                  <td th:text="${projectEntity.id}"></td>
+                  <td th:text="${projectEntity.projectName}"></td>
+                  <td th:text="${projectEntity.projectBrief}"></td>
+                  <td th:text="${projectEntity.clientName}"></td>
+                  <td th:text="${projectEntity.clientEmail}"></td>
+                  <td th:text="${projectEntity.gitHubURL}"></td>
+              </tr>
+          </table>
+      </div>
+      <div>
+          <h1>Enter new details</h1>
       </div>
       <form action="/editExistingProject" method="GET">
           <div>

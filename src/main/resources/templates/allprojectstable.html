@@ -18,16 +18,16 @@
     <div>
         <table  id="projectsTable">
             <tr style="background-color: #333333; color: white">
-                <th>Project Name</th>
                 <th>Project ID</th>
+                <th>Project Name</th>
                 <th>Project Brief</th>
                 <th>Client Name</th>
                 <th>Client Email</th>
                 <th>GitHub URL</th>
             </tr>
             <tr th:each="projectEntity : ${projectslist}">
-                <td th:text="${projectEntity.projectName}"></td>
                 <td th:text="${projectEntity.id}"></td>
+                <td th:text="${projectEntity.projectName}"></td>
                 <td th:text="${projectEntity.projectBrief}"></td>
                 <td th:text="${projectEntity.clientName}"></td>
                 <td th:text="${projectEntity.clientEmail}"></td>
