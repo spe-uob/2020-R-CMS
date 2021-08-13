@@ -3,14 +3,14 @@ server:
 spring:
   security:
     user:
-      name: ENC(efjaXy0B9odFxXpn8zDjnCwHBsUsw/N0pvTrfkhPAjPOCg+W2Gwtx+pEy4HmCvsp)
-      password: ENC(o/JegydKG9mm6EyvYmIfryyC92x3LmUNPlWXM7m4AlwXgh8JJnZqCauYca2Wh4Ia)
+      name: ENC(d29ghxZptoS5y5n7zymFzAGRL3Gmo6Z1Zn7cU+T+KeZzm/pabyQUa9gzjuaIN1np)
+      password: ENC(LMW3gn/makBWeiu/U9Kq9HDQyd6PFuHiDdmmF6CCMQ+wpH+/lnkLOW02iB/57nKe)
       roles: ADMIN
   # 配置数据源
   datasource:
     url: jdbc:mysql://database-test.cxlggy9iwoub.us-east-1.rds.amazonaws.com:3306/projects?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
-    username: ENC(8CfUMkFBASe2wL426AxfE4wkOCWM2LpRUcApfNu1Z7uc053qzbVZRMN1tqslZfwc)
-    password: ENC(bGTcRpWLmwnO3/BEsW2vplHcMHzl71ZptH0vTuipLpSEmk+BQM5TipgRlEUfMXcubkcdxWGePk2c08l/VegXHg==)
+    username: ENC(vOZM61g/X2EEs0JJyfN/M6sSB1yI2V/g853ynElhusA01PKba5cxLFlJjCGYDf4u)
+    password: ENC(rsxkSzOexAi20Q8XoGuGo2EOAGJsLlb/PQ+QBsnE/5FP9pYIATf1rrUBUhaB9/lTbOvOou8yBSbZqcmHz044YQ==)
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
